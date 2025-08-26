@@ -50,17 +50,27 @@
 
 .hogwartsButton {
   padding: $button-padding;
-  border: $border-width solid $house-gryffindor; 
+  border: $border-width solid $house-gryffindor;
   border-radius: $border-radius;
   font-size: $button-font-size;
   font-weight: 600;
-  background: linear-gradient(135deg, $dark-background 0%, $house-gryffindor 100%); 
+  background: linear-gradient(
+    135deg,
+    $dark-background 0%,
+    $house-gryffindor 100%
+  );
   color: $white-text;
   cursor: pointer;
-  transition: $button-transition, background 0.3s ease;
+  transition:
+    $button-transition,
+    background 0.3s ease;
 
   &:hover {
-    background: linear-gradient(135deg, $house-gryffindor 0%, $error-dark-color 100%);
+    background: linear-gradient(
+      135deg,
+      $house-gryffindor 0%,
+      $error-dark-color 100%
+    );
     border-color: $error-dark-color;
     transform: translateY(-2px);
     box-shadow: $button-hover-shadow;
