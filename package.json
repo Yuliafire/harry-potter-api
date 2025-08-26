@@ -3,11 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "description": "Chart for HP students",
-  "homepage": "https://yulifire.github.io/harry-potter-api/",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint --fix .",
