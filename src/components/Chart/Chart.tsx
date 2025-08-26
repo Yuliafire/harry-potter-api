@@ -97,7 +97,7 @@ function HouseChart({ data }: HouseChartProps) {
 
   return (
     <div className={styles.houseDashboard}>
-      <h1 className={styles.dashboardTitle}>Harry Potter House Statistics</h1>
+      <h1 className={styles.dashboardTitle}>Harry Potter House</h1>
 
       <div className={styles.totalCard}>
         <h2 className={styles.totalTitle}>Total Students</h2>
