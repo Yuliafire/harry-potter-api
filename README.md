@@ -1,3 +1,4 @@
+
 # Harry Potter House Analysis
 
 A React/TypeScript application that visualizes the distribution of Hogwarts students across houses with Birth date filtering.
@@ -10,6 +11,7 @@ A React/TypeScript application that visualizes the distribution of Hogwarts stud
 - SCSS Modules
 - Recharts
 - Vite
+
 
 ## Features
 
