@@ -1,23 +1,20 @@
-import { parse, isWithinInterval, isValid } from 'date-fns';
+import { parse } from 'date-fns';
 
 export const parseHarryPotterDate = (
   dateString: string | null
 ): Date | null => {
-  if (!dateString) return null;
+  if (!dateString || !dateString.includes('-')) return null;
 
-  if (dateString.includes('-')) {
-    const parts = dateString.split('-');
-    if (parts.length === 3) {
-      return parse(dateString, 'dd-MM-yyyy', new Date());
-    }
-  }
+  const parts = dateString.split('-');
+  if (parts.length !== 3) return null;
 
-  const year = parseInt(dateString, 10);
-  if (!isNaN(year)) {
-    return new Date(year, 0, 1);
-  }
+  const [day, month, year] = parts.map((part) => part.padStart(2, '0'));
+  const formattedDate = `${day}-${month}-${year}`;
 
-  return null;
+  const parsedDate = parse(formattedDate, 'dd-MM-yyyy', new Date());
+  return parsedDate instanceof Date && !isNaN(parsedDate.getTime())
+    ? parsedDate
+    : null;
 };
 
 export const isDateInRange = (
@@ -25,19 +22,23 @@ export const isDateInRange = (
   startDate: Date | null,
   endDate: Date | null
 ): boolean => {
-  if (!date) return false;
+  if (!date || !(date instanceof Date) || isNaN(date.getTime())) return false;
   if (!startDate && !endDate) return true;
 
   if (startDate && endDate) {
-    return isWithinInterval(date, { start: startDate, end: endDate });
+    const adjustedEndDate = new Date(endDate);
+    adjustedEndDate.setHours(23, 59, 59, 999);
+    return date >= startDate && date <= adjustedEndDate;
   }
 
-  if (startDate && !endDate) {
+  if (startDate) {
     return date >= startDate;
   }
 
-  if (!startDate && endDate) {
-    return date <= endDate;
+  if (endDate) {
+    const adjustedEndDate = new Date(endDate);
+    adjustedEndDate.setHours(23, 59, 59, 999);
+    return date <= adjustedEndDate;
   }
 
   return false;

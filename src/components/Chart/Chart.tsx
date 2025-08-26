@@ -75,12 +75,12 @@ function HouseChart({ data }: HouseChartProps) {
     payload?: Array<{ value: number }>;
     label?: string;
   }) => {
-    if (active && payload && payload.length) {
+    if (active && payload && payload.length && label && houseColors[label]) {
       return (
         <div className={styles.customTooltip}>
           <p
             className={styles.tooltipLabel}
-            style={{ color: houseColors[label!] || '#000' }}
+            style={{ color: houseColors[label] || '#000' }}
           >
             {`${label}: ${payload[0].value} students`}
           </p>

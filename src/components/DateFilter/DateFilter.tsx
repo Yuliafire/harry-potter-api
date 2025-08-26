@@ -1,37 +1,42 @@
 import React, { useState } from 'react';
-import { parse } from 'date-fns';
+import { parseISO } from 'date-fns';
 import styles from './DateFilter.module.scss';
 
 interface DateFilterProps {
   onFilter: (startDate: Date | null, endDate: Date | null) => void;
 }
 
-const DateFilter: React.FC<DateFilterProps> = ({ onFilter }) => {
+function DateFilter({ onFilter }: DateFilterProps) {
   const [startDate, setStartDate] = useState<string>('');
   const [endDate, setEndDate] = useState<string>('');
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const parsedStartDate = startDate
-      ? parse(startDate, 'yyyy-MM-dd', new Date())
-      : null;
-    const parsedEndDate = endDate
-      ? parse(endDate, 'yyyy-MM-dd', new Date())
-      : null;
+    const parsedStartDate = startDate ? parseISO(startDate) : null;
+    const parsedEndDate = endDate ? parseISO(endDate) : null;
 
+    if (parsedStartDate && parsedEndDate && parsedStartDate > parsedEndDate) {
+      setError('Start date must be before or equal to end date.');
+      return;
+    }
+
+    setError(null);
     onFilter(parsedStartDate, parsedEndDate);
   };
 
   const handleClear = () => {
     setStartDate('');
     setEndDate('');
+    setError(null);
     onFilter(null, null);
   };
 
   return (
     <div className={styles.dateFilter}>
       <h2>Filter by Birth Date</h2>
+      {error && <p className={styles.error}>{error}</p>}
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.dateInputs}>
           <div className={styles.inputGroup}>
@@ -68,6 +73,6 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter }) => {
       </form>
     </div>
   );
-};
+}
 
 export default DateFilter;
