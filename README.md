@@ -1,2 +1,2 @@
 # harry-potter-api
-Integrating HP API to shot the students stats.
+Go to the Development branch to check out the codebase.
