@@ -1,0 +1,247 @@
+.dateFilter {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #740001;
+  animation: fadeIn 0.5s ease-out;
+  
+  h2 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dateInputs {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95rem;
+    display: block;
+  }
+  
+  input {
+    padding: 12px 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    background: #fafafa;
+    
+    &:focus {
+      outline: none;
+      border-color: #740001;
+      box-shadow: 0 0 0 3px rgba(116, 0, 1, 0.1);
+      background: white;
+    }
+    
+    &:hover {
+      border-color: #b0b0b0;
+      background: white;
+    }
+    
+    &::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  
+  @media (max-width: 576px) {
+    align-items: center;
+    width: 100%;
+    
+    input {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  
+  button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(116, 0, 1, 0.3);
+    }
+    
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      
+      &:hover {
+        transform: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.applyButton {
+  background: linear-gradient(135deg, #2A623D 0%, #3a7a4e 100%);
+  color: white;
+  
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, #3a7a4e 0%, #4a8a5e 100%);
+  }
+}
+
+.clearButton {
+  background: linear-gradient(135deg, #666 0%, #888 100%);
+  color: white;
+  
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, #888 0%, #999 100%);
+  }
+}
+
+// Animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .dateFilter {
+    padding: 20px;
+    
+    h2 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  .inputGroup {
+    input {
+      min-width: 180px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .dateFilter {
+    padding: 15px;
+    
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+  }
+  
+  .dateInputs {
+    gap: 10px;
+  }
+  
+  .inputGroup {
+    label {
+      font-size: 0.9rem;
+    }
+    
+    input {
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      min-width: 160px;
+    }
+  }
+  
+  .buttonGroup {
+    button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      min-width: 100px;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dateFilter {
+    background: #2d3748;
+    
+    h2 {
+      color: #e2e8f0;
+    }
+  }
+  
+  .inputGroup {
+    label {
+      color: #cbd5e0;
+    }
+    
+    input {
+      background: #4a5568;
+      border-color: #4a5568;
+      color: #e2e8f0;
+      
+      &:focus {
+        background: #2d3748;
+      }
+      
+      &:hover {
+        border-color: #718096;
+        background: #2d3748;
+      }
+    }
+  }
+}

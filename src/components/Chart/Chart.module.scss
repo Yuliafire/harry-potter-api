@@ -1,0 +1,179 @@
+.houseDashboard {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #1a252f;
+  color: #e0e0e0;
+}
+
+.dashboardTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.totalCard {
+  background: #2c3e50;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.totalTitle {
+  font-size: 1.5rem;
+  color: #b0b0b0;
+  margin: 0;
+}
+
+.totalNumber {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 10px 0 0;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.houseCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.houseCard {
+  background: #2c3e50;
+  border-radius: 8px;
+  border-top: 4px solid #8884d8; 
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.houseCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.Gryffindor {
+  border-top-color: #c8102e; 
+}
+
+.Slytherin {
+  border-top-color: #3a7d44; 
+}
+
+.Hufflepuff {
+  border-top-color: #d4a017;
+}
+
+.Ravenclaw {
+  border-top-color: #2a4b7c;
+}
+
+.houseName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.Gryffindor .houseName {
+  color: #c8102e;
+}
+
+.Slytherin .houseName {
+  color: #3a7d44;
+}
+
+.Hufflepuff .houseName {
+  color: #d4a017;
+}
+
+.Ravenclaw .houseName {
+  color: #2a4b7c;
+}
+
+.studentCount {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.studentLabel {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin: 5px 0 0;
+}
+
+.chartContainer {
+  background: #2c3e50;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chartTitle {
+  font-size: 1.5rem;
+  color: #f0f0f0;
+  margin: 0 0 15px;
+  text-align: center;
+}
+
+.customTooltip {
+  background: #34495e;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.tooltipLabel {
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff; 
+}
+
+.tooltipLabel.Gryffindor {
+  color: #c8102e;
+}
+
+.tooltipLabel.Slytherin {
+  color: #3a7d44;
+}
+
+.tooltipLabel.Hufflepuff {
+  color: #d4a017;
+}
+
+.tooltipLabel.Ravenclaw {
+  color: #2a4b7c;
+}
+
+@media (max-width: 768px) {
+  .houseCards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .houseCard {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .dashboardTitle {
+    font-size: 1.5rem;
+  }
+
+  .totalNumber {
+    font-size: 2rem;
+  }
+}
