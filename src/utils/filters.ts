@@ -15,11 +15,15 @@ export const filterStudentsByHouseAndDate = (
   };
 
   characters.forEach((character) => {
-    if (!character.hogwartsStudent) return;
-    if (!houses.includes(character.house)) return;
+    if (!character.hogwartsStudent || !houses.includes(character.house)) return;
+
+    if (!startDate && !endDate) {
+      houseCounts[character.house]++;
+      return;
+    }
 
     const dob = parseHarryPotterDate(character.dateOfBirth);
-    if (isDateInRange(dob, startDate, endDate)) {
+    if (dob && isDateInRange(dob, startDate, endDate)) {
       houseCounts[character.house]++;
     }
   });
