@@ -10,7 +10,7 @@
     "lint": "eslint --fix .",
     "format:fix": "prettier --write .",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "cd .. && husky harry-potter-api/.husky"
   },
   "dependencies": {
     "@types/axios": "^0.9.36",
