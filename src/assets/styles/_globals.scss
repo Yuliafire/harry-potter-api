@@ -39,10 +39,8 @@ $clear-button-end: #888;
 $clear-button-hover-start: #888;
 $clear-button-hover-end: #999;
 
-
 $font-family-primary: 'Palatino Linotype', Palatino, Georgia, serif;
 $font-family-harry-potter: 'Harry Potter', $font-family-primary;
-
 
 $max-width: 1440px;
 $min-height: 100vh;
@@ -80,21 +78,21 @@ $date-filter-mobile-small-padding: 15px;
 $button-mobile-padding: 10px 20px;
 $button-mobile-min-width: 100px;
 
-
-$box-shadow: 0 0 5px $shadow-color-1,
-             0 0 10px $shadow-color-1,
-             0 0 15px $shadow-color-2,
-             inset 0 0 5px $shadow-color-1;
+$box-shadow:
+  0 0 5px $shadow-color-1,
+  0 0 10px $shadow-color-1,
+  0 0 15px $shadow-color-2,
+  inset 0 0 5px $shadow-color-1;
 $box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
 $box-shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.3);
-$box-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.5),
-                   0 0 8px rgba(255, 255, 255, 0.2);
+$box-shadow-hover:
+  0 4px 12px rgba(0, 0, 0, 0.5),
+  0 0 8px rgba(255, 255, 255, 0.2);
 $tooltip-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 $date-filter-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 $input-focus-shadow: 0 0 0 3px rgba(116, 0, 1, 0.1);
 $button-focus-shadow: 0 0 0 3px rgba(116, 0, 1, 0.3);
 $button-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
 
 $heading-font-size: 2.5rem;
 $description-font-size: 1.125rem;
@@ -121,14 +119,15 @@ $mobile-button-font-size: 0.9rem;
 $input-font-size: 1rem;
 $mobile-input-font-size: 0.9rem;
 
-
 $breakpoint-mobile: 576px;
 $breakpoint-tablet: 768px;
 $breakpoint-small-mobile: 480px;
 
 $fade-in-duration: 1s;
 $fade-in-easing: ease-in;
-$hover-transition: transform 0.2s ease, box-shadow 0.2s ease;
+$hover-transition:
+  transform 0.2s ease,
+  box-shadow 0.2s ease;
 $date-filter-fade-duration: 0.5s;
 $date-filter-fade-easing: ease-out;
 $input-transition: all 0.3s ease;
