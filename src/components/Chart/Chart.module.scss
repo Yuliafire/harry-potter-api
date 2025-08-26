@@ -1,43 +1,45 @@
+@use '../../assets/styles/globals' as *;
+
 .houseDashboard {
-  padding: 20px;
-  max-width: 1200px;
+  padding: $padding;
+  max-width: $max-width-dashboard;
   margin: 0 auto;
-  background: #1a252f;
-  color: #e0e0e0;
-  width: 60%;
+  background: $background-color;
+  color: $text-color;
+  width: $dashboard-width;
 }
 
 .dashboardTitle {
-  font-size: 4rem;
+  font-size: $dashboard-title-font-size;
   font-weight: bold;
   text-align: center;
-  color: #f0f0f0;
-  margin-bottom: 20px;
+  color: $light-text;
+  margin-bottom: $margin-bottom;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-  font-family: 'Harry Potter', 'Palatino', serif;
-  color: grey;
+  font-family: $font-family-harry-potter;
+  color: $medium-text;
 }
 
 .totalCard {
-  background: #2c3e50;
-  border-radius: 8px;
-  padding: 20px;
+  background: $dark-background;
+  border-radius: $border-radius;
+  padding: $padding;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  margin-bottom: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: $box-shadow-medium;
+  margin-bottom: $margin-bottom;
+  border: $border-width solid $border-light;
 }
 
 .totalTitle {
-  font-size: 2rem;
-  color: #b0b0b0;
+  font-size: $total-title-font-size;
+  color: $medium-text;
   margin: 0;
 }
 
 .totalNumber {
-  font-size: 3rem;
+  font-size: $total-number-font-size;
   font-weight: bold;
-  color: #ffffff;
+  color: $white-text;
   margin: 10px 0 0;
   text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
 }
@@ -45,123 +47,125 @@
 .houseCards {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: $gap - 10px; 
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: $margin-bottom + 10px; 
 }
 
 .houseCard {
-  background: #2c3e50;
-  border-radius: 8px;
-  border-top: 4px solid #8884d8; 
-  padding: 15px;
-  width: 200px;
+  background: $dark-background;
+  border-radius: $border-radius;
+  border-top: $house-card-border-width solid $default-house-color;
+  padding: $house-card-padding;
+  width: $house-card-width;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: $box-shadow-medium;
+  transition: $hover-transition;
 }
 
 .houseCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 255, 255, 0.2);
+  box-shadow: $box-shadow-hover;
 }
 
 .Gryffindor {
-  border-top-color: #c8102e; 
+  border-top-color: $house-gryffindor;
 }
 
 .Slytherin {
-  border-top-color: #3a7d44; 
+  border-top-color: $house-slytherin;
 }
 
 .Hufflepuff {
-  border-top-color: #d4a017;
+  border-top-color: $house-hufflepuff;
 }
 
 .Ravenclaw {
-  border-top-color: #2a4b7c;
+  border-top-color: $house-ravenclaw;
 }
 
 .houseName {
-  font-size: 1.2rem;
+  font-size: $house-name-font-size;
   font-weight: bold;
   margin: 0 0 10px;
 }
 
 .Gryffindor .houseName {
-  color: #c8102e;
+  color: $house-gryffindor;
 }
 
 .Slytherin .houseName {
-  color: #3a7d44;
+  color: $house-slytherin;
 }
 
 .Hufflepuff .houseName {
-  color: #d4a017;
+  color: $house-hufflepuff;
 }
 
 .Ravenclaw .houseName {
-  color: #2a4b7c;
+  color: $house-ravenclaw;
 }
 
 .studentCount {
-  font-size: 2.5rem;
+  font-size: $student-count-font-size;
   font-weight: bold;
-  color: #ffffff;
+  color: $white-text;
 }
 
 .studentLabel {
-  font-size: 0.9rem;
-  color: #b0b0b0;
+  font-size: $student-label-font-size;
+  color: $medium-text;
   margin: 5px 0 0;
 }
 
 .chartContainer {
-  background: #2c3e50;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: $dark-background;
+  border-radius: $border-radius;
+  padding: $chart-padding;
+  box-shadow: $box-shadow-medium;
+  border: $border-width solid $border-light;
+
+  animation: fadeIn $fade-in-duration $fade-in-easing;
 }
 
 .chartTitle {
-  font-size: 1.5rem;
-  color: #f0f0f0;
+  font-size: $chart-title-font-size;
+  color: $light-text;
   margin: 0 0 15px;
   text-align: center;
 }
 
 .customTooltip {
-  background: #34495e;
-  padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  background: $tooltip-background;
+  padding: $tooltip-padding;
+  border: $border-width solid $tooltip-border;
+  border-radius: $tooltip-border-radius;
+  box-shadow: $tooltip-shadow;
 }
 
 .tooltipLabel {
   font-weight: bold;
   margin: 0;
-  color: #ffffff; 
+  color: $white-text;
 }
 
 .tooltipLabel.Gryffindor {
-  color: #c8102e;
+  color: $house-gryffindor;
 }
 
 .tooltipLabel.Slytherin {
-  color: #3a7d44;
+  color: $house-slytherin;
 }
 
 .tooltipLabel.Hufflepuff {
-  color: #d4a017;
+  color: $house-hufflepuff;
 }
 
 .tooltipLabel.Ravenclaw {
-  color: #2a4b7c;
+  color: $house-ravenclaw;
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-tablet) {
   .houseCards {
     flex-direction: column;
     align-items: center;
@@ -169,23 +173,23 @@
 
   .houseCard {
     width: 100%;
-    max-width: 300px;
+    max-width: $house-card-max-width;
   }
 
   .dashboardTitle {
-    font-size: 1.5rem;
+    font-size: $mobile-dashboard-title-font-size;
   }
 
   .totalNumber {
-    font-size: 2rem;
+    font-size: $mobile-total-number-font-size;
   }
 }
 
-.chartContainer {
-  animation: fadeIn 1s ease-in;
-}
-
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

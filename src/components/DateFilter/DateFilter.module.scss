@@ -1,16 +1,18 @@
+@use '../../assets/styles/globals' as *;
+
 .dateFilter {
-  background: white;
-  border-radius: 12px;
-  padding: 25px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #740001;
-  animation: fadeIn 0.5s ease-out;
-  
+  background: $date-filter-background;
+  border-radius: $border-radius;
+  padding: $date-filter-padding;
+  margin-bottom: $date-filter-margin-bottom;
+  box-shadow: $date-filter-shadow;
+  border-left: $date-filter-border-left-width solid $date-filter-border-color;
+  animation: fadeIn $date-filter-fade-duration $date-filter-fade-easing;
+
   h2 {
     margin: 0 0 20px 0;
-    color: #333;
-    font-size: 1.5rem;
+    color: $medium-text;
+    font-size: $date-filter-heading-font-size;
     text-align: center;
     font-weight: 600;
   }
@@ -19,19 +21,19 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 20px; 
 }
 
 .dateInputs {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: $gap;
   flex-wrap: wrap;
-  
-  @media (max-width: 576px) {
+
+  @media (max-width: $breakpoint-mobile) {
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 15px; 
   }
 }
 
@@ -39,54 +41,55 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
+
   label {
-    margin-bottom: 8px;
+    margin-bottom: $label-margin-bottom;
     font-weight: 600;
-    color: #555;
-    font-size: 0.95rem;
+    color: $date-filter-label;
+    font-size: $label-font-size;
     display: block;
   }
-  
+
   input {
-    padding: 12px 15px;
-    border: 2px solid #e1e5e9;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    min-width: 200px;
-    background: #fafafa;
-    
+    padding: $input-padding;
+    border: $input-border-width solid $date-filter-input-background;
+    border-radius: $input-border-radius;
+    font-size: $input-font-size;
+    transition: $input-transition;
+    min-width: $input-min-width;
+    background: $date-filter-input-background;
+
     &:focus {
       outline: none;
-      border-color: #740001;
-      box-shadow: 0 0 0 3px rgba(116, 0, 1, 0.1);
-      background: white;
+      border-color: $date-filter-border-color;
+      box-shadow: $input-focus-shadow;
+      background: $date-filter-background;
     }
-    
+
     &:hover {
-      border-color: #b0b0b0;
-      background: white;
+      border-color: $date-filter-input-hover;
+      background: $date-filter-background;
     }
-    
+
     &::-webkit-calendar-picker-indicator {
       cursor: pointer;
       opacity: 0.7;
-      transition: opacity 0.3s ease;
-      
+      transition: opacity $input-transition;
+
       &:hover {
         opacity: 1;
       }
     }
   }
-  
-  @media (max-width: 576px) {
+
+  @media (max-width: $breakpoint-mobile) {
     align-items: center;
     width: 100%;
-    
+
     input {
       width: 100%;
-      max-width: 300px;
+      max-width: $input-mobile-max-width;
+      min-width: $input-mobile-min-width;
     }
   }
 }
@@ -94,38 +97,38 @@
 .buttonGroup {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 15px; 
   flex-wrap: wrap;
-  
+
   button {
-    padding: 12px 25px;
+    padding: $button-padding;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: $input-border-radius;
+    font-size: $button-font-size;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 120px;
-    
+    transition: $button-transition;
+    min-width: $button-min-width;
+
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: $button-hover-shadow;
     }
-    
+
     &:active {
       transform: translateY(0);
     }
-    
+
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(116, 0, 1, 0.3);
+      box-shadow: $button-focus-shadow;
     }
-    
+
     &:disabled {
       opacity: 0.6;
       cursor: not-allowed;
       transform: none;
-      
+
       &:hover {
         transform: none;
         box-shadow: none;
@@ -135,20 +138,20 @@
 }
 
 .applyButton {
-  background: linear-gradient(135deg, #2A623D 0%, #3a7a4e 100%);
-  color: white;
-  
+  background: linear-gradient(135deg, $apply-button-start 0%, $apply-button-end 100%);
+  color: $white-text;
+
   &:hover:not(:disabled) {
-    background: linear-gradient(135deg, #3a7a4e 0%, #4a8a5e 100%);
+    background: linear-gradient(135deg, $apply-button-hover-start 0%, $apply-button-hover-end 100%);
   }
 }
 
 .clearButton {
-  background: linear-gradient(135deg, #666 0%, #888 100%);
-  color: white;
-  
+  background: linear-gradient(135deg, $clear-button-start 0%, $clear-button-end 100%);
+  color: $white-text;
+
   &:hover:not(:disabled) {
-    background: linear-gradient(135deg, #888 0%, #999 100%);
+    background: linear-gradient(135deg, $clear-button-hover-start 0%, $clear-button-hover-end 100%);
   }
 }
 
@@ -164,83 +167,83 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-tablet) {
   .dateFilter {
-    padding: 20px;
-    
+    padding: $date-filter-mobile-padding;
+
     h2 {
-      font-size: 1.3rem;
+      font-size: $date-filter-mobile-heading-font-size;
     }
   }
-  
+
   .inputGroup {
     input {
-      min-width: 180px;
+      min-width: $input-mobile-min-width;
     }
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: $breakpoint-small-mobile) {
   .dateFilter {
-    padding: 15px;
-    
+    padding: $date-filter-mobile-small-padding;
+
     h2 {
-      font-size: 1.2rem;
+      font-size: $date-filter-mobile-small-heading-font-size;
       margin-bottom: 15px;
     }
   }
-  
+
   .dateInputs {
-    gap: 10px;
+    gap: 10px; 
   }
-  
+
   .inputGroup {
     label {
-      font-size: 0.9rem;
+      font-size: $mobile-label-font-size;
     }
-    
+
     input {
-      padding: 10px 12px;
-      font-size: 0.9rem;
+      padding: $button-mobile-padding;
+      font-size: $mobile-input-font-size;
       min-width: 160px;
     }
   }
-  
+
   .buttonGroup {
     button {
-      padding: 10px 20px;
-      font-size: 0.9rem;
-      min-width: 100px;
+      padding: $button-mobile-padding;
+      font-size: $mobile-button-font-size;
+      min-width: $button-mobile-min-width;
     }
   }
 }
 
 @media (prefers-color-scheme: dark) {
   .dateFilter {
-    background: #2d3748;
-    
+    background: $date-filter-dark-background;
+
     h2 {
-      color: #e2e8f0;
+      color: $date-filter-dark-text;
     }
   }
-  
+
   .inputGroup {
     label {
-      color: #cbd5e0;
+      color: $date-filter-label-dark;
     }
-    
+
     input {
-      background: #4a5568;
-      border-color: #4a5568;
-      color: #e2e8f0;
-      
+      background: $date-filter-dark-background;
+      border-color: $date-filter-dark-border;
+      color: $date-filter-dark-text;
+
       &:focus {
-        background: #2d3748;
+        background: $date-filter-dark-background;
       }
-      
+
       &:hover {
-        border-color: #718096;
-        background: #2d3748;
+        border-color: $date-filter-dark-hover;
+        background: $date-filter-dark-background;
       }
     }
   }

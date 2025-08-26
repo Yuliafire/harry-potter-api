@@ -1,0 +1,135 @@
+$background-color: #1a252f;
+$text-color: #e0e0e0;
+$border-color: rgb(8, 182, 251);
+$shadow-color-1: #87ceeb;
+$shadow-color-2: #00b7eb;
+$opacity: 88%;
+$error-color: #ef4444;
+$error-dark-color: #dc2626;
+$gray-background: #333;
+$dark-background: #2c3e50;
+$light-text: #f0f0f0;
+$medium-text: #b0b0b0;
+$white-text: #ffffff;
+$border-light: rgba(255, 255, 255, 0.1);
+$tooltip-background: #34495e;
+$tooltip-border: rgba(255, 255, 255, 0.2);
+$house-gryffindor: #c8102e;
+$house-slytherin: #3a7d44;
+$house-hufflepuff: #d4a017;
+$house-ravenclaw: #2a4b7c;
+$default-house-color: #8884d8;
+$date-filter-background: white;
+$date-filter-border-color: #740001;
+$date-filter-dark-background: #2d3748;
+$date-filter-dark-text: #e2e8f0;
+$date-filter-dark-border: #4a5568;
+$date-filter-dark-hover: #718096;
+$date-filter-input-background: #fafafa;
+$date-filter-input-focus: rgba(116, 0, 1, 0.1);
+$date-filter-input-hover: #b0b0b0;
+$date-filter-label: #555;
+$date-filter-label-dark: #cbd5e0;
+$apply-button-start: #2a623d;
+$apply-button-end: #3a7a4e;
+$apply-button-hover-start: #3a7a4e;
+$apply-button-hover-end: #4a8a5e;
+$clear-button-start: #666;
+$clear-button-end: #888;
+$clear-button-hover-start: #888;
+$clear-button-hover-end: #999;
+
+
+$font-family-primary: 'Palatino Linotype', Palatino, Georgia, serif;
+$font-family-harry-potter: 'Harry Potter', $font-family-primary;
+
+
+$max-width: 1440px;
+$min-height: 100vh;
+$padding: 20px;
+$margin-bottom: 20px;
+$gap: 25px;
+$border-radius: 10px;
+$border-width: 1px;
+$max-width-error: 32rem;
+$error-padding: 2rem;
+$error-gap: 1rem;
+$max-width-dashboard: 1200px;
+$dashboard-width: 60%;
+$house-card-width: 200px;
+$house-card-max-width: 300px;
+$house-card-border-width: 4px;
+$house-card-padding: 15px;
+$chart-padding: 20px;
+$tooltip-padding: 10px;
+$tooltip-border-radius: 5px;
+$date-filter-padding: 25px;
+$date-filter-margin-bottom: 30px;
+$date-filter-border-left-width: 4px;
+$input-padding: 12px 15px;
+$input-min-width: 200px;
+$input-mobile-min-width: 180px;
+$input-mobile-max-width: 300px;
+$input-border-width: 2px;
+$input-border-radius: 8px;
+$label-margin-bottom: 8px;
+$button-padding: 12px 25px;
+$button-min-width: 120px;
+$date-filter-mobile-padding: 20px;
+$date-filter-mobile-small-padding: 15px;
+$button-mobile-padding: 10px 20px;
+$button-mobile-min-width: 100px;
+
+
+$box-shadow: 0 0 5px $shadow-color-1,
+             0 0 10px $shadow-color-1,
+             0 0 15px $shadow-color-2,
+             inset 0 0 5px $shadow-color-1;
+$box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.3);
+$box-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.5),
+                   0 0 8px rgba(255, 255, 255, 0.2);
+$tooltip-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+$date-filter-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+$input-focus-shadow: 0 0 0 3px rgba(116, 0, 1, 0.1);
+$button-focus-shadow: 0 0 0 3px rgba(116, 0, 1, 0.3);
+$button-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+
+$heading-font-size: 2.5rem;
+$description-font-size: 1.125rem;
+$error-message-font-size: 1rem;
+$mobile-heading-font-size: 2rem;
+$mobile-description-font-size: 1rem;
+$mobile-error-message-font-size: 0.875rem;
+$dashboard-title-font-size: 4rem;
+$total-title-font-size: 2rem;
+$total-number-font-size: 3rem;
+$house-name-font-size: 1.2rem;
+$student-count-font-size: 2.5rem;
+$student-label-font-size: 0.9rem;
+$chart-title-font-size: 1.5rem;
+$mobile-dashboard-title-font-size: 1.5rem;
+$mobile-total-number-font-size: 2rem;
+$date-filter-heading-font-size: 1.5rem;
+$date-filter-mobile-heading-font-size: 1.3rem;
+$date-filter-mobile-small-heading-font-size: 1.2rem;
+$label-font-size: 0.95rem;
+$mobile-label-font-size: 0.9rem;
+$button-font-size: 1rem;
+$mobile-button-font-size: 0.9rem;
+$input-font-size: 1rem;
+$mobile-input-font-size: 0.9rem;
+
+
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-small-mobile: 480px;
+
+$fade-in-duration: 1s;
+$fade-in-easing: ease-in;
+$hover-transition: transform 0.2s ease, box-shadow 0.2s ease;
+$date-filter-fade-duration: 0.5s;
+$date-filter-fade-easing: ease-out;
+$input-transition: all 0.3s ease;
+$button-transition: all 0.3s ease;

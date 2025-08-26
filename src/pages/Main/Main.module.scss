@@ -1,31 +1,29 @@
+@use '../../assets/styles/globals' as *;
+
 .main {
-  min-height: 100vh;
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
+  min-height: $min-height;
+  padding: $padding;
+  font-family: $font-family-primary;
   width: 100%;
-  max-width: 1440px;
-  font-family: "Palatino Linotype", Palatino, Georgia, serif;
-  background: #1a252f;
-  opacity: 88%;
-  color: #e0e0e0;
+  max-width: $max-width;
+  background: $background-color;
+  opacity: $opacity;
+  color: $text-color;
   margin: 0 auto;
-  border: 1px solid rgb(8, 182, 251);
-  border-radius: 10px;
-  box-shadow: 
-    0 0 5px #87CEEB,         
-    0 0 10px #87CEEB,        
-    0 0 15px #00B7EB,      
-    inset 0 0 5px #87CEEB;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  box-sizing: border-box;
 }
 
 .dateInputs {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  margin-bottom: 20px;
+  gap: $gap;
+  margin-bottom: $margin-bottom;
   flex-wrap: wrap;
-  
-  @media (max-width: 576px) {
+
+  @media (max-width: $breakpoint-mobile) {
     flex-direction: column;
     align-items: center;
     gap: 15px;

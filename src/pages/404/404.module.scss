@@ -1,57 +1,59 @@
+@use '../../assets/styles/globals' as *;
+
 .errorPage {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  max-width: 32rem;
+  min-height: $min-height;
+  max-width: $max-width-error;
   margin: 0 auto;
-  padding: 2rem;
-  background-color: #333;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: $error-padding;
+  background-color: $gray-background;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-light;
   text-align: center;
-  gap: 1rem;
+  gap: $error-gap;
 }
 
 .heading {
-  font-size: 2.5rem;
+  font-size: $heading-font-size;
   font-weight: 700;
-  color: #ef4444;
+  color: $error-color;
   margin: 0;
 }
 
 .description {
-  font-size: 1.125rem;
-  color: white;
+  font-size: $description-font-size;
+  color: $text-color;
   margin: 0;
 }
 
 .errorMessage {
-  font-size: 1rem;
-  color: white;
+  font-size: $error-message-font-size;
+  color: $text-color;
   margin: 0;
+
+  i {
+    font-style: italic;
+    color: $error-dark-color;
+  }
 }
 
-.errorMessage i {
-  font-style: italic;
-  color: #dc2626;
-}
-
-@media (max-width: 640px) {
+@media (max-width: $breakpoint-mobile) {
   .errorPage {
-    padding: 1.5rem;
+    padding: $error-padding - 0.5rem; 
   }
 
   .heading {
-    font-size: 2rem;
+    font-size: $mobile-heading-font-size;
   }
 
   .description {
-    font-size: 1rem;
+    font-size: $mobile-description-font-size;
   }
 
   .errorMessage {
-    font-size: 0.875rem;
+    font-size: $mobile-error-message-font-size;
   }
 }
