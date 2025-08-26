@@ -1,3 +1,4 @@
+
 # Harry Potter House Analysis
 
 A React/TypeScript application that visualizes the distribution of Hogwarts students across houses with date filtering.
