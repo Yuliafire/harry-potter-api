@@ -1,4 +1,4 @@
-@use '../../assets/styles/globals' as *;
+@use '../../styles/globals' as *;
 
 .dateFilter {
   background: $date-filter-background;
@@ -81,17 +81,6 @@
       }
     }
   }
-
-  @media (max-width: $breakpoint-mobile) {
-    align-items: center;
-    width: 100%;
-
-    input {
-      width: 100%;
-      // max-width: $input-mobile-max-width;
-      min-width: $input-mobile-min-width;
-    }
-  }
 }
 
 .buttonGroup {
@@ -171,7 +160,6 @@
   }
 }
 
-// Animation
 @keyframes fadeIn {
   from {
     opacity: 0;
