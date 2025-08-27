@@ -1,4 +1,4 @@
-import type { Character } from '../types/types';
+import type { Character } from '../../types/types';
 import { parseHarryPotterDate, isDateInRange } from './dateUtils';
 
 export const filterStudentsByHouseAndDate = (

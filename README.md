@@ -24,8 +24,8 @@ A React/TypeScript application that visualizes the distribution of Hogwarts stud
 
 ### Prerequisites
 
+- Docker 
 - Node.js (v18 or higher)
-- Docker (optional)
 
 ### Installation
 
