@@ -1,7 +1,7 @@
 import { useRouteError } from 'react-router-dom';
-import styles from './404.module.scss';
+import styles from './NotFound.module.scss';
 
-export default function ErrorPage() {
+export default function NotFound() {
   const error = useRouteError();
   console.error(error);
   if (error instanceof Error) {

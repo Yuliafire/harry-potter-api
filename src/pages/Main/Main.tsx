@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import DateFilter from '../../components/DateFilter/DateFilter';
 import HouseChart from '../../components/Chart/Chart';
-import { fetchCharacters } from '../../services/api';
+import { fetchCharacters } from '../../services/api/api';
 import type { Character } from '../../types/types';
-import { filterStudentsByHouseAndDate } from '../../utils/filters';
+import { filterStudentsByHouseAndDate } from '../../services/utils/filters';
 import styles from './Main.module.scss';
 
 function Main() {

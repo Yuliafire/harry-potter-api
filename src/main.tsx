@@ -1,8 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './global.scss';
-import App from './App/App.tsx';
-import ErrorBoundary from './ui/ErrorBoundary/ErrorBoundary.tsx';
+import App from './app/App.tsx';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary.tsx';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Root element not found');
