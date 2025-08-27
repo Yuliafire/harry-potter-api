@@ -15,7 +15,6 @@
   text-align: center;
   color: $light-text;
   margin-bottom: $margin-bottom;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
   font-family: $font-family-harry-potter;
   color: $medium-text;
 }
@@ -41,7 +40,6 @@
   font-weight: bold;
   color: $white-text;
   margin: 10px 0 0;
-  text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
 }
 
 .houseCards {
@@ -124,7 +122,6 @@
   padding: $chart-padding;
   box-shadow: $box-shadow-medium;
   border: $border-width solid $border-light;
-
   animation: fadeIn $fade-in-duration $fade-in-easing;
 }
 

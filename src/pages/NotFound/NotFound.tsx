@@ -6,7 +6,7 @@ export default function NotFound() {
   console.error(error);
   if (error instanceof Error) {
     return (
-      <div id="error-page" className={styles.errorPage}>
+      <div id="error-page" className={styles.notFound}>
         <h1 className={styles.heading}>Oops!</h1>
         <p className={styles.description}>
           Sorry, an unexpected error has occurred.

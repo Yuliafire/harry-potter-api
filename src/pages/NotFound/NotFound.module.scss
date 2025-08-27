@@ -1,6 +1,6 @@
 @use '../../assets/styles/globals' as *;
 
-.errorPage {
+.notFound {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +41,7 @@
 }
 
 @media (max-width: $breakpoint-mobile) {
-  .errorPage {
+ .notFound{
     padding: $error-padding - 0.5rem;
   }
 
