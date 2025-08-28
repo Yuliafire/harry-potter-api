@@ -1,3 +1,4 @@
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './DateFilter.module.scss';
 
@@ -14,20 +15,19 @@ function DateFilter({ onFilter }: DateFilterProps) {
   const {
     register,
     handleSubmit,
-    reset,
+    watch,
     formState: { errors },
+    reset,
   } = useForm<FormData>({
     defaultValues: { startDate: '', endDate: '' },
+    mode: 'onChange',
   });
+
+  const watchEndDate = watch('endDate');
 
   const onSubmit = (data: FormData) => {
     const parsedStartDate = data.startDate ? new Date(data.startDate) : null;
     const parsedEndDate = data.endDate ? new Date(data.endDate) : null;
-
-    if (parsedStartDate && parsedEndDate && parsedStartDate > parsedEndDate) {
-      return;
-    }
-
     onFilter(parsedStartDate, parsedEndDate);
   };
 
@@ -39,34 +39,33 @@ function DateFilter({ onFilter }: DateFilterProps) {
   return (
     <div className={styles.dateFilter}>
       <h2>Filter by Birth Date</h2>
-      {errors.startDate && (
-        <p className={styles.error}>{errors.startDate.message}</p>
-      )}
-      {errors.endDate && (
-        <p className={styles.error}>{errors.endDate.message}</p>
-      )}
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <div className={styles.dateInputs}>
           <div className={styles.inputGroup}>
             <label htmlFor="startDate">From:</label>
             <input
-              autoFocus
               type="date"
               id="startDate"
               {...register('startDate', {
                 required: 'Start date is required',
-                validate: (value, formValues) => {
+                validate: (value) => {
                   const start = value ? new Date(value) : null;
-                  const end = formValues.endDate
-                    ? new Date(formValues.endDate)
-                    : null;
+                  const end = watchEndDate ? new Date(watchEndDate) : null;
                   if (start && end && start > end) {
                     return 'Start date must be before or equal to end date.';
                   }
                   return true;
                 },
               })}
+              aria-describedby={
+                errors.startDate ? 'startDate-error' : undefined
+              }
             />
+            {errors.startDate && (
+              <p id="startDate-error" className={styles.error}>
+                {errors.startDate.message}
+              </p>
+            )}
           </div>
           <div className={styles.inputGroup}>
             <label htmlFor="endDate">To:</label>
@@ -74,7 +73,13 @@ function DateFilter({ onFilter }: DateFilterProps) {
               type="date"
               id="endDate"
               {...register('endDate', { required: 'End date is required' })}
+              aria-describedby={errors.endDate ? 'endDate-error' : undefined}
             />
+            {errors.endDate && (
+              <p id="endDate-error" className={styles.error}>
+                {errors.endDate.message}
+              </p>
+            )}
           </div>
         </div>
         <div className={styles.buttonGroup}>

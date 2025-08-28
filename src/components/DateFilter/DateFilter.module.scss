@@ -1,4 +1,4 @@
-@use '../../styles/globals' as *;
+@import '../../styles/globals';
 
 .dateFilter {
   background: $date-filter-background;
@@ -81,6 +81,13 @@
       }
     }
   }
+
+  .error {
+    color: $error-color;
+    font-size: $student-label-font-size;
+    margin-top: 5px;
+    padding-left: 5px;
+  }
 }
 
 .buttonGroup {
@@ -127,36 +134,20 @@
 }
 
 .applyButton {
-  background: linear-gradient(
-    135deg,
-    $apply-button-start 0%,
-    $apply-button-end 100%
-  );
+  background: linear-gradient(135deg, $apply-button-start 0%, $apply-button-end 100%);
   color: $white-text;
 
   &:hover:not(:disabled) {
-    background: linear-gradient(
-      135deg,
-      $apply-button-hover-start 0%,
-      $apply-button-hover-end 100%
-    );
+    background: linear-gradient(135deg, $apply-button-hover-start 0%, $apply-button-hover-end 100%);
   }
 }
 
 .clearButton {
-  background: linear-gradient(
-    135deg,
-    $clear-button-start 0%,
-    $clear-button-end 100%
-  );
+  background: linear-gradient(135deg, $clear-button-start 0%, $clear-button-end 100%);
   color: $white-text;
 
   &:hover:not(:disabled) {
-    background: linear-gradient(
-      135deg,
-      $clear-button-hover-start 0%,
-      $clear-button-hover-end 100%
-    );
+    background: linear-gradient(135deg, $clear-button-hover-start 0%, $clear-button-hover-end 100%);
   }
 }
 
@@ -184,6 +175,10 @@
     input {
       min-width: $input-mobile-min-width;
     }
+
+    .error {
+      font-size: $mobile-label-font-size; // Adjusted for smaller screens
+    }
   }
 }
 
@@ -210,6 +205,10 @@
       padding: $button-mobile-padding;
       font-size: $mobile-input-font-size;
       min-width: 160px;
+    }
+
+    .error {
+      font-size: $mobile-label-font-size;
     }
   }
 
@@ -249,6 +248,10 @@
         border-color: $date-filter-dark-hover;
         background: $date-filter-dark-background;
       }
+    }
+
+    .error {
+      color: $error-dark-color;
     }
   }
 }
