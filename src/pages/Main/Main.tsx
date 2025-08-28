@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import DateFilter from '../../components/DateFilter/DateFilter';
-import HouseChart from '../../components/Chart/Chart';
+import HouseChart from '../../components/HouseDashboard/Chart';
 import { fetchCharacters } from '../../services/api/api';
 import type { Character } from '../../types/types';
 import { filterStudentsByHouseAndDate } from '../../services/utils/filters';

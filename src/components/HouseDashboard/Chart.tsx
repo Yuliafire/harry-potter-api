@@ -21,7 +21,6 @@ interface HouseChartProps {
   data: Record<string, number>;
 }
 
-// Define the props type for RoundedBar
 interface RoundedBarProps {
   fill?: string;
   x?: number;
