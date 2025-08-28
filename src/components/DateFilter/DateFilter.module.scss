@@ -80,6 +80,11 @@
         opacity: 1;
       }
     }
+
+    &.invalid {
+      border-color: $error-color;
+      background: lighten($date-filter-background, 5%);
+    }
   }
 
   .error {
@@ -134,38 +139,22 @@
 }
 
 .applyButton {
-  background: linear-gradient(
-    135deg,
-    $apply-button-start 0%,
-    $apply-button-end 100%
-  );
+  background: linear-gradient(135deg, $apply-button-start 0%, $apply-button-end 100%);
   color: $white-text;
   font-family: $font-family-primary;
 
   &:hover:not(:disabled) {
-    background: linear-gradient(
-      135deg,
-      $apply-button-hover-start 0%,
-      $apply-button-hover-end 100%
-    );
+    background: linear-gradient(135deg, $apply-button-hover-start 0%, $apply-button-hover-end 100%);
   }
 }
 
 .clearButton {
-  background: linear-gradient(
-    135deg,
-    $clear-button-start 0%,
-    $clear-button-end 100%
-  );
+  background: linear-gradient(135deg, $clear-button-start 0%, $clear-button-end 100%);
   color: $white-text;
   font-family: $font-family-primary;
 
   &:hover:not(:disabled) {
-    background: linear-gradient(
-      135deg,
-      $clear-button-hover-start 0%,
-      $clear-button-hover-end 100%
-    );
+    background: linear-gradient(135deg, $clear-button-hover-start 0%, $clear-button-hover-end 100%);
   }
 }
 
@@ -197,6 +186,10 @@
     .error {
       font-size: $error-message-font-size;
     }
+
+    input.invalid {
+      border-color: $error-color;
+    }
   }
 }
 
@@ -227,6 +220,10 @@
 
     .error {
       font-size: $error-message-font-size;
+    }
+
+    input.invalid {
+      border-color: $error-color;
     }
   }
 
@@ -265,6 +262,11 @@
       &:hover {
         border-color: $date-filter-dark-hover;
         background: $date-filter-dark-background;
+      }
+
+      &.invalid {
+        border-color: $error-dark-color;
+        background: darken($date-filter-dark-background, 5%);
       }
     }
 
