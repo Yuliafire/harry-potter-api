@@ -140,6 +140,7 @@
     $apply-button-end 100%
   );
   color: $white-text;
+  font-family: $font-family-primary;
 
   &:hover:not(:disabled) {
     background: linear-gradient(
@@ -157,6 +158,7 @@
     $clear-button-end 100%
   );
   color: $white-text;
+  font-family: $font-family-primary;
 
   &:hover:not(:disabled) {
     background: linear-gradient(
