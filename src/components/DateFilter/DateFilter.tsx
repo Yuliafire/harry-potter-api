@@ -15,7 +15,7 @@ function DateFilter({ onFilter }: DateFilterProps) {
     register,
     handleSubmit,
     watch,
-    formState: { errors, isSubmitted },
+    formState: { errors },
     reset,
   } = useForm<FormData>({
     defaultValues: { startDate: '', endDate: '' },
@@ -59,7 +59,7 @@ function DateFilter({ onFilter }: DateFilterProps) {
               aria-describedby={
                 errors.startDate ? 'startDate-error' : undefined
               }
-              className={isSubmitted && errors.startDate ? styles.invalid : ''}
+              className={errors.startDate ? styles.invalid : ''}
             />
             {errors.startDate && (
               <p id="startDate-error" className={styles.error}>
@@ -74,7 +74,7 @@ function DateFilter({ onFilter }: DateFilterProps) {
               id="endDate"
               {...register('endDate', { required: 'End date is required' })}
               aria-describedby={errors.endDate ? 'endDate-error' : undefined}
-              className={isSubmitted && errors.endDate ? styles.invalid : ''}
+              className={errors.endDate ? styles.invalid : ''}
             />
             {errors.endDate && (
               <p id="endDate-error" className={styles.error}>
