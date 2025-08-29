@@ -1,1 +1,33 @@
-@import '../../styles/globals';
+@use '../../../styles/globals' as *;
+
+.customTooltip {
+  background: $tooltip-background;
+  padding: $tooltip-padding;
+  border: $border-width solid $tooltip-border;
+  border-radius: $tooltip-border-radius;
+  box-shadow: $tooltip-shadow;
+  width: 100%;
+  max-width: 100%;
+}
+
+.tooltipLabel {
+  font-weight: bold;
+  margin: 0;
+  color: $white-text;
+}
+
+.tooltipLabel.Gryffindor {
+  color: $house-gryffindor;
+}
+
+.tooltipLabel.Slytherin {
+  color: $house-slytherin;
+}
+
+.tooltipLabel.Hufflepuff {
+  color: $house-hufflepuff;
+}
+
+.tooltipLabel.Ravenclaw {
+  color: $house-ravenclaw;
+}

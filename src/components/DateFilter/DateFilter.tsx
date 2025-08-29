@@ -37,7 +37,7 @@ function DateFilter({ onFilter }: DateFilterProps) {
 
   return (
     <div className={styles.dateFilter}>
-      <h2>Filter by Birth Date</h2>
+      <h2 className={styles.filterTitle}>Filter by Birth Date</h2>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <div className={styles.dateInputs}>
           <div className={styles.inputGroup}>

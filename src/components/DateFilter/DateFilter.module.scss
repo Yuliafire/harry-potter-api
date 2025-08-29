@@ -1,4 +1,16 @@
-@import '../../styles/globals';
+@use '../../styles/globals' as *;
+
+@mixin input-responsive {
+  @media (max-width: $breakpoint-tablet) {
+    min-width: $input-mobile-min-width;
+  }
+
+  @media (max-width: $breakpoint-small-mobile) {
+    padding: $button-mobile-padding;
+    font-size: $mobile-input-font-size;
+    min-width: 160px;
+  }
+}
 
 .dateFilter {
   background: $date-filter-background;
@@ -9,12 +21,21 @@
   border-left: $date-filter-border-left-width solid $date-filter-border-color;
   animation: fadeIn $date-filter-fade-duration $date-filter-fade-easing;
 
-  h2 {
+  .filterTitle {
     margin: 0 0 20px 0;
     color: $medium-text;
     font-size: $date-filter-heading-font-size;
     text-align: center;
     font-weight: 600;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: $error-message-font-size;
+    }
+
+    @media (max-width: $breakpoint-small-mobile) {
+      font-size: $date-filter-mobile-small-heading-font-size;
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -48,6 +69,10 @@
     color: $date-filter-label;
     font-size: $label-font-size;
     display: block;
+
+    @media (max-width: $breakpoint-small-mobile) {
+      font-size: $mobile-label-font-size;
+    }
   }
 
   input {
@@ -63,28 +88,31 @@
       outline: none;
       border-color: $date-filter-border-color;
       box-shadow: $input-focus-shadow;
-      background: $date-filter-background;
     }
 
     &:hover {
       border-color: $date-filter-input-hover;
-      background: $date-filter-background;
+    }
+
+    &.invalid {
+      border-color: $error-color;
+
+      @media (prefers-color-scheme: dark) {
+        border-color: $error-dark-color;
+      }
     }
 
     &::-webkit-calendar-picker-indicator {
       cursor: pointer;
       opacity: 0.7;
-      transition: opacity $input-transition;
+      transition: $input-transition;
 
       &:hover {
         opacity: 1;
       }
     }
 
-    &.invalid {
-      border-color: $error-color;
-      background: lighten($date-filter-background, 5%);
-    }
+    @include input-responsive;
   }
 
   .error {
@@ -92,6 +120,10 @@
     font-size: $error-message-font-size;
     margin-top: 5px;
     padding-left: 5px;
+
+    @media (prefers-color-scheme: dark) {
+      color: $error-dark-color;
+    }
   }
 }
 
@@ -135,6 +167,12 @@
         box-shadow: none;
       }
     }
+
+    @media (max-width: $breakpoint-small-mobile) {
+      padding: $button-mobile-padding;
+      font-size: $mobile-button-font-size;
+      min-width: $button-mobile-min-width;
+    }
   }
 }
 
@@ -169,73 +207,6 @@
   }
 }
 
-@media (max-width: $breakpoint-tablet) {
-  .dateFilter {
-    padding: $date-filter-mobile-padding;
-
-    h2 {
-      font-size: $error-message-font-size;
-    }
-  }
-
-  .inputGroup {
-    input {
-      min-width: $input-mobile-min-width;
-    }
-
-    .error {
-      font-size: $error-message-font-size;
-    }
-
-    input.invalid {
-      border-color: $error-color;
-    }
-  }
-}
-
-@media (max-width: $breakpoint-small-mobile) {
-  .dateFilter {
-    padding: $date-filter-mobile-small-padding;
-
-    h2 {
-      font-size: $date-filter-mobile-small-heading-font-size;
-      margin-bottom: 15px;
-    }
-  }
-
-  .dateInputs {
-    gap: 10px;
-  }
-
-  .inputGroup {
-    label {
-      font-size: $mobile-label-font-size;
-    }
-
-    input {
-      padding: $button-mobile-padding;
-      font-size: $mobile-input-font-size;
-      min-width: 160px;
-    }
-
-    .error {
-      font-size: $error-message-font-size;
-    }
-
-    input.invalid {
-      border-color: $error-color;
-    }
-  }
-
-  .buttonGroup {
-    button {
-      padding: $button-mobile-padding;
-      font-size: $mobile-button-font-size;
-      min-width: $button-mobile-min-width;
-    }
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   .dateFilter {
     background: $date-filter-dark-background;
@@ -261,17 +232,7 @@
 
       &:hover {
         border-color: $date-filter-dark-hover;
-        background: $date-filter-dark-background;
       }
-
-      &.invalid {
-        border-color: $error-dark-color;
-        background: darken($date-filter-dark-background, 5%);
-      }
-    }
-
-    .error {
-      color: $error-dark-color;
     }
   }
 }

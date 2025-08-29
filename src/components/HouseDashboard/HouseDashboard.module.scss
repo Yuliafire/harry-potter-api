@@ -1,1 +1,36 @@
-@import '../../styles/globals';
+@use '../../styles/globals' as *;
+
+.houseDashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: $padding;
+    max-width: $max-width-dashboard;
+    margin: 0 auto;
+    background: $background-color;
+    color: $text-color;
+    width: $dashboard-width;
+}
+
+.dashboardTitle {
+  font-size: $dashboard-title-font-size;
+  font-weight: bold;
+  text-align: center;
+  color: $light-text;
+  margin-bottom: $margin-bottom;
+  font-family: $font-family-harry-potter;
+  color: $medium-text;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $mobile-heading-font-size;
+  }
+}
+
+.houseCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap - 10px;
+  justify-content: center;
+  margin-bottom: $margin-bottom + 10px;
+}

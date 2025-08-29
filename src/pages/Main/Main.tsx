@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import DateFilter from '../../components/DateFilter/DateFilter';
-import HouseChart from '../../components/HouseDashboard/Chart';
+import HouseDashboard from '../../components/HouseDashboard/HouseDashboard';
 import { fetchCharacters } from '../../services/api/api';
 import type { Character } from '../../types/types';
 import { filterStudentsByHouseAndDate } from '../../services/utils/filters';
@@ -54,7 +54,7 @@ function Main() {
     <div className={styles.main}>
       <main>
         <DateFilter onFilter={handleFilter} />
-        <HouseChart data={filteredData} />
+        <HouseDashboard data={filteredData} />
       </main>
     </div>
   );

@@ -42,14 +42,6 @@
   margin: 10px 0 0;
 }
 
-.houseCards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $gap - 10px;
-  justify-content: center;
-  margin-bottom: $margin-bottom + 10px;
-}
-
 .houseCard {
   background: $dark-background;
   border-radius: $border-radius;
