@@ -11,13 +11,12 @@ import {
 import { RoundedBar } from '../RoundedBar/RoundedBar';
 import { CustomTooltip } from '../CustomTooltip/CustomTooltip';
 import styles from './HouseChart.module.scss';
-import type { JSX } from 'react';
 
 interface HouseChartProps {
   data: { house: string; students: number; fill: string }[];
 }
 
-export const HouseChart = ({ data }: HouseChartProps): JSX.Element => (
+export const HouseChart = ({ data }: HouseChartProps) => (
   <div className={styles.chartContainer}>
     <h2 className={styles.chartTitle}>Students by House</h2>
 

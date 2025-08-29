@@ -1,4 +1,3 @@
-import type { JSX } from 'react';
 import { HOUSE_COLORS, type HouseName } from '../../../types/types';
 import styles from './HouseCard.module.scss';
 
@@ -7,7 +6,7 @@ interface HouseCardProps {
   students: number;
 }
 
-export const HouseCard = ({ house, students }: HouseCardProps): JSX.Element => {
+export const HouseCard = ({ house, students }: HouseCardProps) => {
   const houseColor = HOUSE_COLORS[house as HouseName] || HOUSE_COLORS.Default;
 
   return (

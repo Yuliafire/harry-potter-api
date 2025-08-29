@@ -1,4 +1,3 @@
-import type { JSX } from 'react';
 import { HOUSE_COLORS, type HouseName } from '../../../types/types';
 import styles from './CustomTooltip.module.scss';
 
@@ -12,7 +11,7 @@ export const CustomTooltip = ({
   active,
   payload,
   label,
-}: CustomTooltipProps): JSX.Element | null => {
+}: CustomTooltipProps) => {
   if (!active || !payload?.length || !label) return null;
 
   const houseColor = HOUSE_COLORS[label as HouseName] || HOUSE_COLORS.Default;

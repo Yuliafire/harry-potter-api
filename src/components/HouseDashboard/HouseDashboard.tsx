@@ -6,13 +6,12 @@ import {
   calculateTotalStudents,
 } from '../../services/utils/transfromHouseData';
 import styles from './HouseDashboard.module.scss';
-import type { JSX } from 'react';
 
 interface HouseDashboardProps {
   data: Record<string, number>;
 }
 
-export const HouseDashboard = ({ data }: HouseDashboardProps): JSX.Element => {
+export const HouseDashboard = ({ data }: HouseDashboardProps) => {
   const chartData = transformHouseData(data);
   const totalStudents = calculateTotalStudents(data);
 
