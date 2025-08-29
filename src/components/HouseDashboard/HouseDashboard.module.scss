@@ -1,16 +1,16 @@
 @use '../../styles/globals' as *;
 
 .houseDashboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: $padding;
-    max-width: $max-width-dashboard;
-    margin: 0 auto;
-    background: $background-color;
-    color: $text-color;
-    width: $dashboard-width;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $padding;
+  max-width: $max-width-dashboard;
+  margin: 0 auto;
+  background: $background-color;
+  color: $text-color;
+  width: $dashboard-width;
 }
 
 .dashboardTitle {
@@ -22,8 +22,8 @@
   font-family: $font-family-harry-potter;
   color: $medium-text;
 
-  @media (max-width: $breakpoint-mobile) {
-    font-size: $mobile-heading-font-size;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: $total-title-font-size;
   }
 }
 
@@ -33,4 +33,21 @@
   gap: $gap - 10px;
   justify-content: center;
   margin-bottom: $margin-bottom + 10px;
+}
+
+
+@media (max-width: $breakpoint-tablet) {
+  .houseCards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

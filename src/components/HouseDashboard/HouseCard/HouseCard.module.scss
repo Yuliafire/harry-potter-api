@@ -67,7 +67,7 @@
   font-weight: bold;
   color: $white-text;
 
-   @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-mobile) {
     font-size: $mobile-heading-font-size;
   }
 }

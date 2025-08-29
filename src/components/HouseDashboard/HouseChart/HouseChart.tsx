@@ -20,9 +20,10 @@ interface HouseChartProps {
 export const HouseChart = ({ data }: HouseChartProps): JSX.Element => (
   <div className={styles.chartContainer}>
     <h2 className={styles.chartTitle}>Students by House</h2>
+
     <ResponsiveContainer width="100%" height={350}>
-      <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" vertical={false} />
+      <BarChart data={data} className="houseChart">
+        <CartesianGrid />
         <XAxis dataKey="house" />
         <YAxis />
         <Tooltip content={<CustomTooltip />} />
@@ -31,8 +32,6 @@ export const HouseChart = ({ data }: HouseChartProps): JSX.Element => (
           dataKey="students"
           name="Number of Students"
           shape={<RoundedBar />}
-          animationDuration={1500}
-          animationEasing="ease-in-out"
         />
       </BarChart>
     </ResponsiveContainer>

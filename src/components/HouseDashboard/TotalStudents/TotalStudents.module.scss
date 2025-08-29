@@ -15,7 +15,7 @@
   color: $medium-text;
   margin: 0;
 
-    @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-mobile) {
     font-size: $mobile-heading-font-size;
   }
 }
@@ -26,7 +26,7 @@
   color: $white-text;
   margin: 10px 0 0;
 
-   @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-mobile) {
     font-size: $mobile-heading-font-size;
   }
 }

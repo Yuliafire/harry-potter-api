@@ -1,75 +1,132 @@
 @use '../../../styles/globals' as *;
 
 .chartContainer {
-  padding: $chart-padding;
-  max-width: $max-width-dashboard;
-  margin: 0 auto;
-}
-
-.chartTitle {
-  font-size: $chart-title-font-size;
-  font-weight: 600;
-  color: $medium-text;
-  text-align: center;
-  margin-bottom: $margin-bottom;
-}
-
-.houseCards {
   display: flex;
-  flex-wrap: wrap;
-  gap: $gap - 10px;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-bottom: $margin-bottom + 10px;
-} 
-
-.barChart {
-  margin: $margin-bottom $chart-padding $chart-padding $chart-padding;
-}
-
-.chartContainer {
-  background: $dark-background;
-  border-radius: $border-radius;
-  padding: $chart-padding;
-  box-shadow: $box-shadow-medium;
-  border: $border-width solid $border-light;
-  animation: fadeIn $fade-in-duration $fade-in-easing;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
   width: 100%;
-}
 
-.chartTitle {
-  font-size: $chart-title-font-size;
-  color: $light-text;
-  margin: 0 0 15px;
-  text-align: center;
-}
-
-
-@media (max-width: $breakpoint-tablet) {
-  .houseCards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .houseCard {
-    width: 100%;
-    max-width: $house-card-max-width;
-  }
-
-  .dashboardTitle {
-    font-size: $mobile-dashboard-title-font-size;
-  }
-
-  .totalNumber {
-    font-size: $mobile-total-number-font-size;
+  .chartTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
   }
 }
 
+:global {
+  .houseChart {
+    .recharts-surface {
+      margin: 5px 30px 25px 20px; 
+    }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+    .recharts-cartesian-axis {
+      .recharts-cartesian-axis-tick-value {
+        font-size: 12px;
+        fill: #666;
+      }
+    }
+
+    .recharts-cartesian-grid {
+      line {
+        stroke: #e0e0e0;
+        stroke-dasharray: 3 3;
+      }
+
+      .recharts-cartesian-grid-vertical {
+        display: none;
+      }
+    }
+
+    .recharts-tooltip-cursor {
+      fill: rgba(0, 0, 0, 0.05);
+    }
+
+
+    .recharts-legend-wrapper {
+      bottom: -10px !important;
+      
+      .recharts-default-legend {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        
+        .recharts-legend-item {
+          margin: 0;
+          
+          .recharts-legend-item-text {
+            font-size: 12px;
+            color: #666;
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+
+    .recharts-bar {
+      animation: barEntrance 1500ms ease-in-out;
+    }
+
+    @keyframes barEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .recharts-responsive-container {
+      height: 350px;
+    }
   }
 }
+
+@media (max-width: 768px) {
+  .chartContainer {
+    padding: 16px;
+    margin: 16px 0;
+
+    .chartTitle {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+    }
+  }
+
+  :global {
+    .houseChart {
+      .recharts-surface {
+        margin: 5px 15px 20px 15px;
+      }
+
+      .recharts-responsive-container {
+        height: 300px;
+      }
+
+      .recharts-legend-wrapper {
+        bottom: -5px !important;
+        
+        .recharts-default-legend {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+      }
+      
+      .recharts-cartesian-axis-tick-value {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+
