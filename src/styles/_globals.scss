@@ -1,0 +1,134 @@
+$border-light: rgba(#ffffff, 0.1);
+$tooltip-border: rgba(#ffffff, 0.2);
+$date-filter-border-color: rgba(#740001, 0.8);
+$date-filter-input-focus: rgba(#740001, 0.1);
+$background-color: rgba(#1a252f, 1);
+$border-color: rgba(#0814fb, 0.8);
+$shadow-color-1: rgba(#87ceeb, 0.7);
+$shadow-color-2: rgba(#00b7eb, 0.6);
+$error-color: rgba(#ef4444, 0.9);
+$error-dark-color: rgba(#dc2626, 0.85);
+$gray-background: rgba(#333, 0.9);
+$dark-background: rgba(#2c3e50, 0.95);
+$tooltip-background: rgba(#34495e, 0.9);
+$house-gryffindor: rgba(#c8102e, 1);
+$house-slytherin: rgba(#3a7d44, 1);
+$house-hufflepuff: rgba(#d4a017, 1);
+$house-ravenclaw: rgba(#2a4b7c, 1);
+$default-house-color: rgba(#8884d8, 0.9);
+$date-filter-background: rgba(#ffffff, 0.95);
+$date-filter-dark-background: rgba(#2d3748, 0.9);
+$date-filter-dark-text: rgba(#e2e8f0, 0.9);
+$date-filter-dark-border: rgba(#4a5568, 0.7);
+$date-filter-dark-hover: rgba(#718096, 0.8);
+$date-filter-input-background: rgba(#fafafa, 0.95);
+$date-filter-input-hover: rgba(#b0b0b0, 0.8);
+$date-filter-label: rgba(#555, 0.9);
+$date-filter-label-dark: rgba(#cbd5e0, 0.9);
+$apply-button-start: rgba(#2a623d, 0.9);
+$apply-button-end: rgba(#3a7a4e, 0.9);
+$apply-button-hover-start: rgba(#3a7a4e, 0.95);
+$apply-button-hover-end: rgba(#4a8a5e, 0.95);
+$clear-button-start: rgba(#666, 0.9);
+$clear-button-end: rgba(#888, 0.9);
+$clear-button-hover-start: rgba(#888, 0.95);
+$clear-button-hover-end: rgba(#999, 0.95);
+$text-color: rgba(#e0e0e0, 0.9);
+$light-text: rgba(#f0f0f0, 0.9);
+$medium-text: rgba(#b0b0b0, 0.9);
+$white-text: rgba(#ffffff, 0.9);
+$opacity: 88%;
+
+$font-family-primary: 'Palatino Linotype', Palatino, Georgia, serif;
+$font-family-harry-potter: 'Harry Potter', $font-family-primary;
+
+$max-width: 1440px;
+$min-height: 100vh;
+$padding: 20px;
+$margin-bottom: 20px;
+$gap: 25px;
+$border-radius: 10px;
+$border-width: 1px;
+$max-width-error: 32rem;
+$error-padding: 2rem;
+$error-gap: 1rem;
+$max-width-dashboard: 1200px;
+$dashboard-width: 60%;
+$house-card-width: 200px;
+$house-card-max-width: 300px;
+$house-card-border-width: 4px;
+$house-card-padding: 15px;
+$chart-padding: 20px;
+$tooltip-padding: 10px;
+$tooltip-border-radius: 5px;
+$date-filter-padding: 25px;
+$date-filter-margin-bottom: 30px;
+$date-filter-border-left-width: 4px;
+$input-padding: 12px 15px;
+$input-min-width: 200px;
+$input-mobile-min-width: 180px;
+$input-mobile-max-width: 300px;
+$input-border-width: 2px;
+$input-border-radius: 8px;
+$label-margin-bottom: 8px;
+$button-padding: 12px 25px;
+$button-min-width: 120px;
+$date-filter-mobile-padding: 20px;
+$date-filter-mobile-small-padding: 15px;
+$button-mobile-padding: 10px 20px;
+$button-mobile-min-width: 100px;
+
+$box-shadow:
+  0 0 5px $shadow-color-1,
+  0 0 10px $shadow-color-1,
+  0 0 15px $shadow-color-2,
+  inset 0 0 5px $shadow-color-1;
+$box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.3);
+$box-shadow-hover:
+  0 4px 12px rgba(0, 0, 0, 0.5),
+  0 0 8px rgba(255, 255, 255, 0.2);
+$tooltip-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+$date-filter-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+$input-focus-shadow: 0 0 0 3px rgba(116, 0, 1, 0.1);
+$button-focus-shadow: 0 0 0 3px rgba(116, 0, 1, 0.3);
+$button-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+$heading-font-size: 2.25rem;
+$description-font-size: 1.1875rem;
+$error-message-font-size: 0.9375rem;
+$mobile-heading-font-size: 1.8rem;
+$mobile-description-font-size: 0.95rem;
+$mobile-error-message-font-size: 0.75rem;
+$dashboard-title-font-size: 4.375rem;
+$total-title-font-size: 2.25rem;
+$total-number-font-size: 3.5rem;
+$house-name-font-size: 1.1875rem;
+$student-count-font-size: 2.25rem;
+$student-label-font-size: 0.75rem;
+$chart-title-font-size: 1.5rem;
+$mobile-dashboard-title-font-size: 1.5rem;
+$mobile-total-number-font-size: 1.8rem;
+$date-filter-heading-font-size: 1.5rem;
+$date-filter-mobile-heading-font-size: 1.2rem;
+$date-filter-mobile-small-heading-font-size: 0.95rem;
+$label-font-size: 0.9375rem;
+$mobile-label-font-size: 0.75rem;
+$button-font-size: 0.9375rem;
+$mobile-button-font-size: 0.75rem;
+$input-font-size: 0.9375rem;
+$mobile-input-font-size: 0.75rem;
+
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-small-mobile: 480px;
+
+$fade-in-duration: 1s;
+$fade-in-easing: ease-in;
+$hover-transition:
+  transform 0.2s ease,
+  box-shadow 0.2s ease;
+$date-filter-fade-duration: 0.5s;
+$date-filter-fade-easing: ease-out;
+$input-transition: all 0.3s ease;
+$button-transition: all 0.3s ease;

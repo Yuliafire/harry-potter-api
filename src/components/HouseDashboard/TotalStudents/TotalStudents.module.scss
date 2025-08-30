@@ -1,0 +1,32 @@
+@use '../../../styles/globals' as *;
+
+.totalCard {
+  background: $dark-background;
+  border-radius: $border-radius;
+  padding: $padding;
+  text-align: center;
+  box-shadow: $box-shadow-medium;
+  margin-bottom: $margin-bottom;
+  border: $border-width solid $border-light;
+}
+
+.totalTitle {
+  font-size: $total-title-font-size;
+  color: $medium-text;
+  margin: 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $mobile-heading-font-size;
+  }
+}
+
+.totalNumber {
+  font-size: $total-number-font-size;
+  font-weight: bold;
+  color: $white-text;
+  margin: 10px 0 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $mobile-heading-font-size;
+  }
+}

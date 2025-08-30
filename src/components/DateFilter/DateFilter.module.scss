@@ -1,0 +1,254 @@
+@use '../../styles/globals' as *;
+
+@mixin input-responsive {
+  @media (max-width: $breakpoint-tablet) {
+    min-width: $input-mobile-min-width;
+  }
+
+  @media (max-width: $breakpoint-small-mobile) {
+    padding: $button-mobile-padding;
+    font-size: $mobile-input-font-size;
+    min-width: 160px;
+  }
+}
+
+.dateFilter {
+  background: $date-filter-background;
+  border-radius: $border-radius;
+  padding: $date-filter-padding;
+  margin-bottom: $date-filter-margin-bottom;
+  box-shadow: $date-filter-shadow;
+  border-left: $date-filter-border-left-width solid $date-filter-border-color;
+  animation: fadeIn $date-filter-fade-duration $date-filter-fade-easing;
+
+  .filterTitle {
+    margin: 0 0 20px 0;
+    color: $medium-text;
+    font-size: $date-filter-heading-font-size;
+    text-align: center;
+    font-weight: 600;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: $error-message-font-size;
+    }
+
+    @media (max-width: $breakpoint-small-mobile) {
+      font-size: $date-filter-mobile-small-heading-font-size;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dateInputs {
+  display: flex;
+  justify-content: center;
+  gap: $gap;
+  flex-wrap: wrap;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  label {
+    margin-bottom: $label-margin-bottom;
+    font-weight: 600;
+    color: $date-filter-label;
+    font-size: $label-font-size;
+    display: block;
+
+    @media (max-width: $breakpoint-small-mobile) {
+      font-size: $mobile-label-font-size;
+    }
+  }
+
+  input {
+    padding: $input-padding;
+    border: $input-border-width solid $date-filter-input-background;
+    border-radius: $input-border-radius;
+    font-size: $input-font-size;
+    transition: $input-transition;
+    min-width: $input-min-width;
+    background: $date-filter-input-background;
+
+    &:focus {
+      outline: none;
+      border-color: $date-filter-border-color;
+      box-shadow: $input-focus-shadow;
+    }
+
+    &:hover {
+      border-color: $date-filter-input-hover;
+    }
+
+    &.invalid {
+      border-color: $error-color;
+
+      @media (prefers-color-scheme: dark) {
+        border-color: $error-dark-color;
+      }
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      opacity: 0.7;
+      transition: $input-transition;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    @include input-responsive;
+  }
+
+  .error {
+    color: $error-color;
+    font-size: $error-message-font-size;
+    margin-top: 5px;
+    padding-left: 5px;
+
+    @media (prefers-color-scheme: dark) {
+      color: $error-dark-color;
+    }
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  button {
+    padding: $button-padding;
+    border: none;
+    border-radius: $input-border-radius;
+    font-size: $button-font-size;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $button-transition;
+    min-width: $button-min-width;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $button-hover-shadow;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: $button-focus-shadow;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+
+      &:hover {
+        transform: none;
+        box-shadow: none;
+      }
+    }
+
+    @media (max-width: $breakpoint-small-mobile) {
+      padding: $button-mobile-padding;
+      font-size: $mobile-button-font-size;
+      min-width: $button-mobile-min-width;
+    }
+  }
+}
+
+.applyButton {
+  background: linear-gradient(
+    135deg,
+    $apply-button-start 0%,
+    $apply-button-end 100%
+  );
+  color: $white-text;
+  font-family: $font-family-primary;
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(
+      135deg,
+      $apply-button-hover-start 0%,
+      $apply-button-hover-end 100%
+    );
+  }
+}
+
+.clearButton {
+  background: linear-gradient(
+    135deg,
+    $clear-button-start 0%,
+    $clear-button-end 100%
+  );
+  color: $white-text;
+  font-family: $font-family-primary;
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(
+      135deg,
+      $clear-button-hover-start 0%,
+      $clear-button-hover-end 100%
+    );
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dateFilter {
+    background: $date-filter-dark-background;
+
+    h2 {
+      color: $date-filter-dark-text;
+    }
+  }
+
+  .inputGroup {
+    label {
+      color: $date-filter-label-dark;
+    }
+
+    input {
+      background: $date-filter-dark-background;
+      border-color: $date-filter-dark-border;
+      color: $date-filter-dark-text;
+
+      &:focus {
+        background: $date-filter-dark-background;
+      }
+
+      &:hover {
+        border-color: $date-filter-dark-hover;
+      }
+    }
+  }
+}
