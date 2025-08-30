@@ -1,5 +1,4 @@
 import type { Character } from '../../types/types';
-import { parseHarryPotterDate, isDateInRange } from './dateUtils';
 
 export const filterStudentsByHouseAndDate = (
   characters: Character[],
@@ -22,11 +21,38 @@ export const filterStudentsByHouseAndDate = (
       return;
     }
 
-    const dob = parseHarryPotterDate(character.dateOfBirth);
+    const dob = character.dateOfBirth ? new Date(character.dateOfBirth) : null;
+
     if (dob && isDateInRange(dob, startDate, endDate)) {
       houseCounts[character.house]++;
     }
   });
 
   return houseCounts;
+};
+
+const isDateInRange = (
+  date: Date,
+  startDate: Date | null,
+  endDate: Date | null
+): boolean => {
+  const dateStr = date.toISOString().split('T')[0];
+
+  if (startDate && endDate) {
+    const startStr = startDate.toISOString().split('T')[0];
+    const endStr = endDate.toISOString().split('T')[0];
+    return dateStr >= startStr && dateStr <= endStr;
+  }
+
+  if (startDate) {
+    const startStr = startDate.toISOString().split('T')[0];
+    return dateStr >= startStr;
+  }
+
+  if (endDate) {
+    const endStr = endDate.toISOString().split('T')[0];
+    return dateStr <= endStr;
+  }
+
+  return true;
 };
